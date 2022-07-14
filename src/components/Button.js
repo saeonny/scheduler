@@ -14,8 +14,11 @@ import "components/Button.scss";
 // <button class="button button--confirm">Confirm</button>
 // it follows that scss
 
-// classNames will append ("button" props.confirm? button += props.confirm : += "")
-//("button" props.danger? button += props.danger : += "")
+//CLASSNAMES [LIBRARY]
+// const buttonClass = classNames("button", {
+//   "button--confirm": props.confirm (if this true => button button--confirm),
+//   "button--danger": props.danger (if this is true => button button--danger)
+// });
 
 export default function Button(props) {
 
