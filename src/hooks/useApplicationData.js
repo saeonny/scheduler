@@ -27,8 +27,8 @@ export default function useAppliacationData() {
   }, [])
 
 
-  
-  
+
+
   const getDayIndex = function (day) {
     const index = {
       Monday: 0,
@@ -39,37 +39,44 @@ export default function useAppliacationData() {
     }
     return index[day]
   }
-  
-  
+
+
   function bookInterview(id, interview) {
-  
+
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
     };
-  
+
     const appointments = {
       ...state.appointments,
       [id]: appointment
     };
-    const dayIndex = getDayIndex(state.day)
-    const day = { ...state.days[dayIndex], spots: state.days[dayIndex].spots - 1 }
-    let days = state.days
-    days[dayIndex] = day
-  
+    
     const url = `/api/appointments/${id}`;
+    if (state.appointments[id].interview === null) {
+      const dayIndex = getDayIndex(state.day)
+      const day = { ...state.days[dayIndex], spots: state.days[dayIndex].spots - 1 }
+      let days = [...state.days]
+      days[dayIndex] = day
+
+      return axios.put(url, appointment)
+        .then(() => { setState({ ...state, appointments, days }) })
+    
+    }
+    
     return axios.put(url, appointment)
-    .then(() => { setState({ ...state, appointments, days }) })
-  
-    //ERROR MODE
-    // const errorUrl = `/api/appointments/${id}`;
-    // return axios.put(errorUrl, appointment)
-    // .then(() => { setState({ ...state, appointments, days }) })
+      .then(() => { setState({ ...state, appointments }) })
+
+    
+
+
+ 
   }
-  
+
   //  DELETING EXISTING INTERVIEW => CONFIRM => DELETEING
   function cancelInterview(id) {
-  
+
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -80,16 +87,14 @@ export default function useAppliacationData() {
     }
     const dayIndex = getDayIndex(state.day)
     const day = { ...state.days[dayIndex], spots: state.days[dayIndex].spots + 1 }
-    let days = state.days
+    let days = [...state.days]
     days[dayIndex] = day
-  
-    const  url =`http://localhost:8001/api/appointments/${id}`;
+
+    const url = `http://localhost:8001/api/appointments/${id}`;
     return axios.delete(url, appointment).then(() => { setState({ ...state, appointments, days }) })
-  
-    //ERROR MODE
-    // const errorUrl = `http://localhost:8001/api/appointments/${id}`
-    // return axios.delete(errorUrl, appointment).then(() => { setState({ ...state, appointments, days }) })
+
+
   }
-  return {state,setDay,bookInterview,cancelInterview}
+  return { state, setDay, bookInterview, cancelInterview }
 
 }
