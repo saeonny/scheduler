@@ -9,6 +9,7 @@ export default function DayList(props){
                         spots = {day.spots}
                         selected = {day.name === props.value}
                         setDay = {props.setDay}
+
                         />)
   })
   // console.log("days",days) // return as array of DayListItem object
