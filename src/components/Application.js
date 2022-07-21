@@ -9,12 +9,10 @@ import useAppliacationData from "hooks/useApplicationData";
 
 
 
-
-
 export default function Application(props) {
-  const {state, setDay, bookInterview, cancelInterview} = useAppliacationData();
+  const { state, setDay, bookInterview, cancelInterview } = useAppliacationData();
 
-  
+
 
   const dailyAppointments = getAppointmentsForDay(state, state.day)
 
@@ -29,12 +27,12 @@ export default function Application(props) {
       interview={interview}
       interviewers={interviewers}
       bookInterview={bookInterview}
-      cancelInterview = {cancelInterview}
+      cancelInterview={cancelInterview}
     />)
-  })
+  });
+
   appointmentComponents[5] = <Appointment key="last" time="5pm" />
 
-  
 
   return (
     <main className="layout">
@@ -65,4 +63,4 @@ export default function Application(props) {
       </section>
     </main>
   );
-}
+};

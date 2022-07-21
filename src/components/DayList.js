@@ -11,12 +11,12 @@ export default function DayList(props){
                         setDay = {props.setDay}
 
                         />)
-  })
-  // console.log("days",days) // return as array of DayListItem object
+  });
+ 
 
   return(
     <ul>
       {days}
     </ul>
-  )
-}
+  );
+};
