@@ -40,8 +40,6 @@ npm start
 ### Booking Interview
 !["screenshot booking an appointment"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-form.png)
 1. we can book/add an interview by clicking ( + ) sign  
-
-!["screenshot booking an appointment Form"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-form.png)
 2. we can go back by clicking "Cancel" button
 3. type student name: Saeonny and select interviewer then click "Save" button to add an interview
 
