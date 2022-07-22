@@ -14,17 +14,16 @@ SetUp DataBase (psql)
 
 We need 2 different Terminals to run Webpack Development Server with database since Interview Scheduler fetchs data from scheduler-api server
 
-1. data-api server : go to scheduler-api directory and run
+### 1. data-api server : go to scheduler-api directory and run
 ```sh
 npm start
 ```
 - Make sure that api server working : http://localhost:8001/api/days
  !["screenshot api-server/days"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-api.png)
-- /img url api/
 - How to reset Database : http://localhost:8001/api/debug/reset
 - error mode: `npm run error`
 
-2. Interview Scheduler : go to scheduler directory and run
+### 2. Interview Scheduler : go to scheduler directory and run
 ```sh
 npm start
 ```
