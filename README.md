@@ -42,17 +42,18 @@ npm start
 1. we can book/add an interview by clicking ( + ) sign  
 
 !["screenshot booking an appointment Form"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-form.png)
-2. type student name: Saeonny and select interviewer then click "Save" button to add an interview
-3. we can go back by clicking "Cancel" button
+2. we can go back by clicking "Cancel" button
+3. type student name: Saeonny and select interviewer then click "Save" button to add an interview
+
 !["screenshot after booking an appointment"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-after%20save.png)
 
 
-
-!["screenshot existing appointment hover"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-hover.png)
+!["screenshot hover existing appointment"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-hover.png)
+When you click or hover over an existing apppointment
 4. [Edit] We can edit existing appointment : can change the student's name and re-select the interviewer
 5. [Delete] We can Delete an existing appointment 
 
-!["screenshot existing appointment hover"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-error.png)
+!["screenshot error message"](https://github.com/saeonny/scheduler/blob/master/docs/scheduler-appointment-error.png)
 6. [Handling Errors] : we show the error message if we failed to save or delete or edit an appointment then we show the error page with appropriate message
 
 
